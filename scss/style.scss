@@ -16,6 +16,8 @@ $fontColor: $darkGrayishCyan;
 $inputFieldBg: #f3f9fa;
 $inputFieldFg: #00474b;
 $labelFg: #5e7a7d;
+$buttonBg: #00474b;
+$buttonFg: #fff;
 
 * {
   margin: 0;
@@ -39,6 +41,14 @@ body {
   }
 }
 
+label,
+.label {
+  margin-bottom: 5px;
+  display: block;
+  font-weight: 700;
+  color: $labelFg;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -54,12 +64,7 @@ body {
   form {
     .amount {
       margin: 32px 32px 0px 32px;
-      label {
-        margin-bottom: 5px;
-        display: block;
-        font-weight: 700;
-        color: $labelFg;
-      }
+
       input {
         border: none;
         background-color: $inputFieldBg;
@@ -78,6 +83,32 @@ body {
 
     .select-tip {
       display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+      margin: 32px;
+      label,
+      .label {
+        margin-bottom: 5px;
+        display: block;
+        font-weight: 700;
+        color: $labelFg;
+      }
+
+      .label {
+        position: absolute;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: $buttonBg;
+        width: 147px;
+        height: 48px;
+        border: none;
+        color: $buttonFg;
+        font-size: 24px;
+        text-align: center;
+        border-radius: 5px;
+      }
     }
   }
 }
