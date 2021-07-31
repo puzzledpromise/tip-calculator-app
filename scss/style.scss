@@ -14,19 +14,26 @@ $background: #c5e4e7;
 $containerBg: $white;
 $fontColor: $darkGrayishCyan;
 $inputFieldBg: #f3f9fa;
-$inputFieldFg: #00474b;
+$inputFieldFg: $veryDarkCyan;
+$inputFieldPlaceholderFg: $darkGrayishCyan;
 $labelFg: #5e7a7d;
-$buttonBg: #00474b;
-$buttonFg: #fff;
+$buttonBg: $veryDarkCyan;
+$buttonFg: $white;
+$calcOutputBg: $veryDarkCyan;
+$calcSubLabelFg: #7f9d9f;
+$calcResultFg: $strongCyan;
+$restBtnFg: $veryDarkCyan;
+$resetBtnBg: $strongCyan;
+$resetBtnFg: $veryDarkCyan;
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Space Mono', monospace;
 }
 
 body {
-  font-family: 'Space Mono', monospace;
   background-color: $background;
   display: flex;
   flex-direction: column;
@@ -41,12 +48,27 @@ body {
   }
 }
 
-label,
-.label {
+label {
   margin-bottom: 5px;
   display: block;
   font-weight: 700;
   color: $labelFg;
+}
+
+.wide-input {
+  border: none;
+  background-color: $inputFieldBg;
+  width: 100%;
+  height: 48px;
+  text-align: right;
+  font-size: 24px;
+  font-weight: 700;
+  color: $inputFieldFg;
+  padding-right: 18px;
+  border-radius: 5px;
+}
+input:focus {
+  outline: none;
 }
 
 .container {
@@ -64,49 +86,118 @@ label,
   form {
     .amount {
       margin: 32px 32px 0px 32px;
+      position: relative;
 
-      input {
-        border: none;
-        background-color: $inputFieldBg;
-        width: 100%;
-        height: 48px;
-        text-align: right;
-        font-size: 24px;
-        font-weight: 700;
-        color: $inputFieldFg;
-        padding-right: 18px;
-      }
-      input:focus {
-        outline: none;
+      label:after {
+        content: '';
+        position: absolute;
+        background: url('../images/icon-dollar.svg') no-repeat;
+        width: 10px;
+        height: 20px;
+        top: 45px;
+        left: 15px;
       }
     }
 
-    .select-tip {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 10px;
-      margin: 32px;
-      label,
-      .label {
-        margin-bottom: 5px;
-        display: block;
-        font-weight: 700;
-        color: $labelFg;
-      }
+    .tip-container {
+      margin-top: 32px;
+      margin-left: 32px;
+      margin-right: 32px;
 
-      .label {
+      .select-tip {
+        margin-top: 16px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+
+        .btn {
+          display: inline-block;
+          background-color: $buttonBg;
+          width: 147px;
+          height: 48px;
+          border: none;
+          color: $buttonFg;
+          font-size: 24px;
+          text-align: center;
+          border-radius: 5px;
+        }
+
+        input {
+          color: $inputFieldFg;
+          background-color: $inputFieldBg;
+          border: none;
+          width: 147px;
+          font-size: 24px;
+          font-weight: 700;
+          text-align: right;
+          padding-right: 18px;
+        }
+        input:focus {
+          outline: none;
+        }
+        input:placeholder {
+          color: $inputFieldPlaceholderFg;
+        }
+      }
+    }
+    .people {
+      margin: 32px 32px 0px 32px;
+      position: relative;
+
+      label:after {
+        content: '';
         position: absolute;
+        background: url('../images/icon-person.svg') no-repeat;
+        width: 15px;
+        height: 20px;
+        top: 45px;
+        left: 15px;
+      }
+    }
+
+    .calc-output {
+      margin: 32px;
+      background: $calcOutputBg;
+      height: 257px;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+
+      .calc-grid {
+        padding-top: 37px;
+        padding-left: 24px;
+        padding-right: 22px;
+        display: grid;
+        grid-row-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        .calc-label {
+          font-size: 16px;
+          color: $white;
+          font-weight: 700;
+          span {
+            color: $calcSubLabelFg;
+            font-size: 13px;
+            font-weight: 700;
+          }
+        }
+        .calc-result {
+          text-align: right;
+          font-size: 32px;
+          font-weight: 700;
+          color: $calcResultFg;
+        }
       }
 
-      .btn {
-        display: inline-block;
-        background-color: $buttonBg;
-        width: 147px;
-        height: 48px;
+      button {
         border: none;
-        color: $buttonFg;
-        font-size: 24px;
-        text-align: center;
+        background: $resetBtnBg;
+        color: $resetBtnFg;
+        font-size: 20px;
+        font-weight: 700;
+        height: 48px;
+        margin-top: 32px;
+        margin-left: 22px;
+        margin-right: 24px;
         border-radius: 5px;
       }
     }

@@ -17,6 +17,7 @@
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
+        padding-top: 15px;
         font-size: 11px;
         text-align: center;
       }
@@ -41,26 +42,43 @@
       <form method="post" class="form">
         <div class="amount">
           <label for="amount">Bill</label>
-          <input type="text" id="amount" />
+          <input type="text" id="amount" class="wide-input" />
         </div>
-        <div class="select-tip">
-          <span class="label">Select Tip %</span>
-          <button class="btn">5%</button>
-          <button class="btn">10%</button>
-          <button class="btn">15%</button>
-          <button class="btn">25%</button>
-          <button class="btn">50%</button>
-          <input type="text" />
+        <div class="tip-container">
+          <label>Select Tip %</label>
+          <div class="select-tip">
+            <button class="btn">5%</button>
+            <button class="btn">10%</button>
+            <button class="btn">15%</button>
+            <button class="btn">25%</button>
+            <button class="btn">50%</button>
+            <input type="text" placeholder="Custom" />
+          </div>
+        </div>
+        <div class="people">
+          <label for="numberofpeople">Number of People</label>
+          <input type="text" id="numberofpeople" class="wide-input" />
+        </div>
+        <div class="calc-output">
+          <div class="calc-grid">
+            <div class="calc-label">Tip Amount <br /><span>/ person</span></div>
+            <div class="calc-result">$ 4.27</div>
+            <div class="calc-label">Total <br /><span>/ person</span></div>
+            <div class="calc-result">$32.79</div>
+          </div>
+          <button>RESET</button>
         </div>
       </form>
-      Number of People Tip Amount / person Total / person Reset
     </div>
 
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Puzzled Promise</a>.
+      ><br />. Coded by
+      <a href="https://github.com/puzzledpromise/tip-calculator-app"
+        >Puzzled Promise</a
+      >.
     </div>
   </body>
 </html>
