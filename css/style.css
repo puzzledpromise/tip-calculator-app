@@ -114,6 +114,17 @@ input:focus {
   font-size: 24px;
   text-align: center;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.container form .tip-container .select-tip .btn:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.container form .tip-container .select-tip .btn.activeBtn {
+  background-color: #26c2ae;
+  color: #00474b;
 }
 
 .container form .tip-container .select-tip input {
@@ -153,7 +164,6 @@ input:focus {
 .container form .calc-output {
   margin: 32px;
   background: #00474b;
-  height: 257px;
   border-radius: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -171,8 +181,8 @@ input:focus {
   display: -ms-grid;
   display: grid;
   grid-row-gap: 20px;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: 2fr 3fr;
+      grid-template-columns: 2fr 3fr;
 }
 
 .container form .calc-output .calc-grid .calc-label {
@@ -204,7 +214,14 @@ input:focus {
   margin-top: 32px;
   margin-left: 22px;
   margin-right: 24px;
+  margin-bottom: 24px;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.container form .calc-output button:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
 }
 
 @media screen and (min-width: 768px) {

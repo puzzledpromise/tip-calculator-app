@@ -42,31 +42,31 @@
       <form method="post" class="form">
         <div class="amount">
           <label for="amount">Bill</label>
-          <input type="text" id="amount" class="wide-input" />
+          <input type="text" id="amount" class="wide-input" value="0" />
         </div>
         <div class="tip-container">
           <label>Select Tip %</label>
           <div class="select-tip">
-            <button class="btn">5%</button>
-            <button class="btn">10%</button>
-            <button class="btn">15%</button>
-            <button class="btn">25%</button>
-            <button class="btn">50%</button>
+            <button class="btn" value="5">5%</button>
+            <button class="btn" value="10">10%</button>
+            <button class="btn" value="15">15%</button>
+            <button class="btn" value="25">25%</button>
+            <button class="btn" value="50">50%</button>
             <input type="text" placeholder="Custom" />
           </div>
         </div>
         <div class="people">
           <label for="numberofpeople">Number of People</label>
-          <input type="text" id="numberofpeople" class="wide-input" />
+          <input type="text" id="numberOfPeople" class="wide-input" value="0" />
         </div>
         <div class="calc-output">
           <div class="calc-grid">
             <div class="calc-label">Tip Amount <br /><span>/ person</span></div>
             <div class="calc-result">$ 4.27</div>
             <div class="calc-label">Total <br /><span>/ person</span></div>
-            <div class="calc-result">$32.79</div>
+            <div class="calc-result" id="totalAmount">$32.79</div>
           </div>
-          <button>RESET</button>
+          <button id="resetBtn">RESET</button>
         </div>
       </form>
     </div>
@@ -75,10 +75,11 @@
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      ><br />. Coded by
+      ><br />Coded by
       <a href="https://github.com/puzzledpromise/tip-calculator-app"
         >Puzzled Promise</a
-      >.
+      >
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
