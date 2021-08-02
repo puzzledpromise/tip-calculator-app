@@ -3,6 +3,7 @@ let resetButton = document.getElementById('resetBtn');
 let billInput = document.getElementById('amount');
 let peopleNumberInput = document.getElementById('numberOfPeople');
 let totalAmountLabel = document.getElementById('totalAmount');
+let amountPerPersonLabel = document.getElementById('amountPerPerson');
 
 let selectedPerc = 0;
 
@@ -10,10 +11,11 @@ function recalc() {
   let amount = Number(billInput.value);
   let totalTipAmount = (selectedPerc / 100) * amount;
   let numberOfPeople = Number(peopleNumberInput.value);
+  let tipAmountPerPerson = (totalTipAmount / numberOfPeople).toFixed(2);
 
   let totalAmount = ((amount + totalTipAmount) / numberOfPeople).toFixed(2);
   totalAmountLabel.innerHTML = `$ ${totalAmount}`;
-  console.log(totalAmount);
+  amountPerPersonLabel.innerHTML = `$ ${tipAmountPerPerson}`;
 }
 
 // Event Listeners
@@ -33,10 +35,14 @@ percButtons.forEach((item) => {
 
 resetButton.addEventListener('click', (e) => {
   e.preventDefault();
-  window.location.reload();
+  percButtons.forEach((perc) => {
+    perc.classList.remove('activeBtn');
+  });
+  peopleNumberInput.value = 0;
+  billInput.value = 0;
+  recalc();
 });
 
 peopleNumberInput.addEventListener('change', (e) => {
-  console.log('Change!');
   recalc();
 });
