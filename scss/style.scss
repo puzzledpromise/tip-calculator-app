@@ -167,61 +167,65 @@ label {
         left: 15px;
       }
     }
+  }
+  .calc-output {
+    margin: 32px;
+    background: $calcOutputBg;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
 
-    .calc-output {
-      margin: 32px;
-      background: $calcOutputBg;
-      border-radius: 15px;
-      display: flex;
-      flex-direction: column;
-
-      .calc-grid {
-        padding-top: 37px;
-        padding-left: 24px;
-        padding-right: 22px;
-        display: grid;
-        grid-row-gap: 20px;
-        grid-template-columns: 2fr 3fr;
-        .calc-label {
-          font-size: 16px;
-          color: $white;
-          font-weight: 700;
-          span {
-            color: $calcSubLabelFg;
-            font-size: 13px;
-            font-weight: 700;
-          }
-        }
-        .calc-result {
-          text-align: right;
-          font-size: 32px;
-          font-weight: 700;
-          color: $calcResultFg;
-        }
-      }
-
-      button {
-        border: none;
-        background: $resetBtnBg;
-        color: $resetBtnFg;
-        font-size: 20px;
+    .calc-grid {
+      padding-top: 37px;
+      padding-left: 24px;
+      padding-right: 22px;
+      display: grid;
+      grid-row-gap: 20px;
+      grid-template-columns: 2fr 3fr;
+      .calc-label {
+        font-size: 16px;
+        color: $white;
         font-weight: 700;
-        height: 48px;
-        margin-top: 32px;
-        margin-left: 22px;
-        margin-right: 24px;
-        margin-bottom: 24px;
-        border-radius: 5px;
-        cursor: pointer;
+        span {
+          color: $calcSubLabelFg;
+          font-size: 13px;
+          font-weight: 700;
+        }
       }
-      button:active {
-        transform: scale(0.98);
+      .calc-result {
+        text-align: right;
+        font-size: 32px;
+        font-weight: 700;
+        color: $calcResultFg;
       }
+    }
+
+    button {
+      border: none;
+      background: $resetBtnBg;
+      color: $resetBtnFg;
+      font-size: 20px;
+      font-weight: 700;
+      height: 48px;
+      margin-top: 32px;
+      margin-left: 22px;
+      margin-right: 24px;
+      margin-bottom: 24px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:active {
+      transform: scale(0.98);
     }
   }
 }
 @media screen and (min-width: 768px) {
-  body {
-    background-color: red;
+  .container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    background-color: $containerBg;
+    max-width: 920px;
+    height: 481px;
   }
 }
